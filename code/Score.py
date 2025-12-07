@@ -24,6 +24,8 @@ class Score:
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
             self.score_text(44, 'NICE! YOU WON!', C_GREEN, SCORE_POS['Title'])
+            score = player_score[0]
+            text = 'P1 Name (4char):'
             if game_mode == MENU_OPTION[0]:
                 score = player_score[0]
                 text = 'P1 Name (4char):'
@@ -68,8 +70,9 @@ class Score:
 
         for player_score in list_score:
             id_, name, score, date = player_score
-            self.score_text(20, f'{name}     {score:05d}     {date}', C_YELLOW,
+            self.score_text(20, f'{name}     {score:04}     {date}', C_YELLOW,
                             SCORE_POS[list_score.index(player_score)])
+
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
