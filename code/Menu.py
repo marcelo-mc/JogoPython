@@ -4,13 +4,14 @@
 import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
-from code.Const import WIN_HEIGHT, WIN_WIDTH, C_ORANGE, C_YELLOW, C_GREEN, MENU_OPTION, C_WHITE
+from code.Const import WIN_HEIGHT, WIN_WIDTH, C_ORANGE, C_YELLOW, C_GREEN, MENU_OPTION, C_WHITE, C_CYAN, C_BLACK, C_RED, \
+    C_BLUE1
 
 
 class Menu:
     def __init__(self, window):
         self.window = window
-        self.surf = pygame.image.load('./asset/MenuBg.png').convert_alpha()
+        self.surf = pygame.image.load('./asset/MenuBg2.jpg').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
     def run(self, ):
@@ -20,13 +21,13 @@ class Menu:
         while True:
             # DRAW IMAGES
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, "Space Wars", C_GREEN, ((WIN_WIDTH / 2), 30))
-            self.menu_text(20, "Press ARROW KEYS to move", C_ORANGE, ((WIN_WIDTH / 2), 70))
-            self.menu_text(20, "Press SPACE to Shoot", C_ORANGE, ((WIN_WIDTH / 2), 90))
+            self.menu_text(50, "ALIENS ON EARTH", C_RED, ((WIN_WIDTH / 2), 30))
+            self.menu_text(16, "Press ARROW KEYS to Move", C_BLACK, ((WIN_WIDTH / 2), 70))
+            self.menu_text(16, "Press SPACE to Shoot", C_BLACK, ((WIN_WIDTH / 2), 90))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(20, MENU_OPTION[i], C_YELLOW, ((WIN_WIDTH / 2), 200 + 22 * i))
+                    self.menu_text(30, MENU_OPTION[i], C_BLUE1, ((WIN_WIDTH / 2), 200 + 22 * i))
                 else:
                     self.menu_text(20, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 200 + 22 * i))
             pygame.display.flip()
