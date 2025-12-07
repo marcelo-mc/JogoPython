@@ -137,7 +137,7 @@ PLAYER_KEY_SHOOT = {'Player1': pygame.K_SPACE,
 
 # T
 
-TIMEOUT_LEVEL = 5000  # 15s - level duration
+TIMEOUT_LEVEL = 15000  # 15s - level duration
 TIMEOUT_STEP = 100  # 100ms
 
 # W
