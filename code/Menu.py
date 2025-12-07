@@ -4,7 +4,7 @@
 import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
-from code.Const import WIN_HEIGHT, WIN_WIDTH, COLOR_ORANGE, COLOR_YELLOW, COLOR_GREEN, MENU_OPTION, COLOR_WHITE
+from code.Const import WIN_HEIGHT, WIN_WIDTH, C_ORANGE, C_YELLOW, C_GREEN, MENU_OPTION, C_WHITE
 
 
 
@@ -21,14 +21,14 @@ class Menu:
         while True:
             # DRAW IMAGES
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, "Brazilian", COLOR_GREEN, ((WIN_WIDTH / 2), 30))
-            self.menu_text(50, "Star Wars", COLOR_ORANGE, ((WIN_WIDTH / 2), 70))
+            self.menu_text(50, "Brazilian", C_GREEN, ((WIN_WIDTH / 2), 30))
+            self.menu_text(50, "Star Wars", C_ORANGE, ((WIN_WIDTH / 2), 70))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(20, MENU_OPTION[i], COLOR_YELLOW, ((WIN_WIDTH / 2), 200 + 22 * i))
+                    self.menu_text(20, MENU_OPTION[i], C_YELLOW, ((WIN_WIDTH / 2), 200 + 22 * i))
                 else:
-                    self.menu_text(20, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH / 2), 200 + 22 * i))
+                    self.menu_text(20, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 200 + 22 * i))
             pygame.display.flip()
 
             # Check for all events
