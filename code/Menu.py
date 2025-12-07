@@ -7,7 +7,6 @@ from pygame.font import Font
 from code.Const import WIN_HEIGHT, WIN_WIDTH, C_ORANGE, C_YELLOW, C_GREEN, MENU_OPTION, C_WHITE
 
 
-
 class Menu:
     def __init__(self, window):
         self.window = window
@@ -21,8 +20,9 @@ class Menu:
         while True:
             # DRAW IMAGES
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(50, "Brazilian", C_GREEN, ((WIN_WIDTH / 2), 30))
-            self.menu_text(50, "Star Wars", C_ORANGE, ((WIN_WIDTH / 2), 70))
+            self.menu_text(50, "Space Wars", C_GREEN, ((WIN_WIDTH / 2), 30))
+            self.menu_text(20, "Press ARROW KEYS to move", C_ORANGE, ((WIN_WIDTH / 2), 70))
+            self.menu_text(20, "Press SPACE to Shoot", C_ORANGE, ((WIN_WIDTH / 2), 90))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
@@ -42,7 +42,7 @@ class Menu:
                             menu_option += 1
                         else:
                             menu_option = 0
-                    if event.key == pygame.K_UP:    # PRESSING KEY UP BUTTON
+                    if event.key == pygame.K_UP:  # PRESSING KEY UP BUTTON
                         if menu_option > 0:
                             menu_option -= 1
                         else:
@@ -55,4 +55,3 @@ class Menu:
         text_surf: Surface = text_font.render(text, True, text_color).convert_alpha()
         text_rect: Rect = text_surf.get_rect(center=text_center_pos)
         self.window.blit(source=text_surf, dest=text_rect)
-
